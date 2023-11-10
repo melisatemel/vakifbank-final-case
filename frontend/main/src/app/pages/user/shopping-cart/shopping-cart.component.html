@@ -1,0 +1,484 @@
+<div class="shopping-cart" *ngIf="!successScreen">
+  <div class="title">
+    {{ showCompleteOrder ? "Order Summary " : "Shopping Cart" }}
+  </div>
+
+  <ng-container *ngIf="products.length; else noProduct">
+    <div class="shopping-container" *ngIf="!showCompleteOrder">
+      <div class="shopping-row">
+        <div class="shopping-col-12" *ngFor="let product of products">
+          <div
+            class="shopping-item mb-3 d-flex align-items-center justify-content-between"
+          >
+            <div class="shopping-image mr-3">
+              <img
+                [src]="product.image"
+                alt="{{ product.name }}"
+                class="shopping-product-image"
+              />
+            </div>
+            <div class="shopping-description">
+              <span class="shopping-product-name">{{ product.name }}</span>
+            </div>
+
+            <div class="shopping-quantity d-flex align-items-center">
+              <button
+                type="button"
+                name="button"
+                (click)="clickQuantity(product, true)"
+                class="btn btn-light"
+                [disabled]="product.disableMinusButton"
+              >
+                <img
+                  src="./../../../assets/images/minus.png"
+                  alt="Minus"
+                  class="shopping-icon"
+                />
+              </button>
+              <input
+                type="text"
+                name="name"
+                [(ngModel)]="product.quantity"
+                class="form-control shopping-quantity-input"
+                readonly
+              />
+              <button
+                type="button"
+                name="button"
+                (click)="clickQuantity(product)"
+                class="btn btn-light"
+              >
+                <img
+                  src="./../../../assets/images/plus.png"
+                  alt="Plus"
+                  class="shopping-icon"
+                />
+              </button>
+            </div>
+
+            <div class="shopping-total-price">
+              {{
+                product.price * product.quantity
+                  | currency : "USD" : "symbol" : "1.2-2"
+              }}
+            </div>
+            <div class="shopping-buttons">
+              <span
+                class="shopping-delete-btn ml-5"
+                (click)="deleteProductFromShoppingCart(product)"
+                >&#10005;</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="shopping-row mt-3 mr-5 mb-4">
+        <div class="shopping-col-12 text-right">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="proceedToPayment()"
+          >
+            Proceed to Payment
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="showCompleteOrder">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="mb-5">
+              <div *ngFor="let product of products">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="description">
+                    <span>{{ product.name }}</span>
+                  </div>
+
+                  <div class="quantity">
+                    <span>Quantity: {{ product.quantity }}</span>
+                  </div>
+
+                  <div class="total-price">
+                    {{ product.price | currency : "USD" : "symbol" : "1.2-2" }}
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-3 justify-content-end">
+                <b>Total Price:</b> ${{ totalPrice }}
+              </div>
+            </div>
+            <!--address section-->
+            <div class="mt-5">
+              <div class="address-container">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-6">
+                      <h5 class="mt-2">My Addresses</h5>
+                    </div>
+                    <div class="col-6 text-right">
+                      <button
+                        class="btn btn-secondary mb-1"
+                        (click)="addAdress = !addAdress"
+                      >
+                        Add Address
+                      </button>
+                    </div>
+                  </div>
+                  <hr />
+                  <div
+                    class="row"
+                    *ngIf="addAdress == false; else addAdressTemp"
+                  >
+                    <div
+                      *ngIf="user.addresses.length === 0"
+                      class="alert alert-info"
+                    >
+                      No address available.
+                    </div>
+                    <div
+                      *ngFor="let address of user.addresses; let i = index"
+                      class="address-card ml-4 mb-4"
+                      [ngClass]="
+                        selectedAddress && selectedAddress.id === address.id
+                          ? 'card-bg-color'
+                          : ''
+                      "
+                      (click)="onSelectAddress(address)"
+                    >
+                      <div class="address-header">
+                        <h5 class="address-title">Address {{ i + 1 }}</h5>
+                      </div>
+                      <div class="address-details">
+                        <ul class="address-list">
+                          <li class="address-item">
+                            <span class="label">Address Line 1:</span>
+                            {{ address?.addressLine1 }}
+                          </li>
+                          <li class="address-item">
+                            <span class="label">Address Line 2:</span>
+                            {{ address?.addressLine2 }}
+                          </li>
+                          <li class="address-item">
+                            <span class="label">City:</span> {{ address.city }}
+                          </li>
+                          <li class="address-item">
+                            <span class="label">County:</span>
+                            {{ address.county }}
+                          </li>
+                          <li class="address-item">
+                            <span class="label">Postal Code:</span>
+                            {{ address.postalCode }}
+                          </li>
+                          <li class="address-item">
+                            <span class="label">Name:</span>
+                            {{ address.customerName }}
+                          </li>
+                        </ul>
+                        <button
+                          class="delete-button mb-2"
+                          (click)="deleteAddress(address.id)"
+                        >
+                          <mat-icon>delete</mat-icon>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <ng-template #addAdressTemp>
+                    <form
+                      [formGroup]="addressForm"
+                      (ngSubmit)="addNewAddress()"
+                    >
+                      <div class="form-group">
+                        <label for="addressLine1">Address Line 1:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="addressLine1"
+                          formControlName="addressLine1"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="addressLine2">Address Line 2:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="addressLine2"
+                          formControlName="addressLine2"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="city">City:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="city"
+                          formControlName="city"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="county">County:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="county"
+                          formControlName="county"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="postalCode">Postal Code:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="postalCode"
+                          formControlName="postalCode"
+                        />
+                      </div>
+
+                      <button type="submit" class="btn btn-primary">
+                        Submit
+                      </button>
+                    </form>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+
+            <!-- Güncellenmiş Ödeme Seçenekleri -->
+            <div class="mt-4">
+              <div class="row">
+                <div class="col-12">
+                  <h5 class="mt-2">Payment Options</h5>
+                </div>
+                <div class="col-12">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      id="cardOption"
+                      name="paymentOption"
+                      [(ngModel)]="selectedPaymentOption"
+                      value="card"
+                    />
+                    <label class="form-check-label" for="cardOption"
+                      >Card</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      id="eftOption"
+                      name="paymentOption"
+                      [(ngModel)]="selectedPaymentOption"
+                      value="eft"
+                    />
+                    <label class="form-check-label" for="eftOption"
+                      >EFT/Transfer</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      id="accountOption"
+                      name="paymentOption"
+                      [(ngModel)]="selectedPaymentOption"
+                      value="account"
+                    />
+                    <label class="form-check-label" for="accountOption"
+                      >Open Account</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--card section-->
+            <div class="mt-4" *ngIf="selectedPaymentOption === 'card'">
+              <div class="address-container">
+                <div class="col">
+                  <div class="row">
+                    <div class="col-6">
+                      <h5 class="mt-2">My Cards</h5>
+                    </div>
+                    <div class="col-6 text-right">
+                      <button
+                        class="btn btn-secondary mb-1"
+                        (click)="addCard = !addCard"
+                      >
+                        Add Card
+                      </button>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row" *ngIf="addCard == false; else addCardTemp">
+                    <div
+                      *ngIf="user.cards.length === 0"
+                      class="alert alert-info"
+                    >
+                      No card available.
+                    </div>
+                    <div
+                      *ngFor="let card of user.cards; let i = index"
+                      class="address-card ml-4 mb-4"
+                      [ngClass]="
+                        selectedCard && selectedCard.id === card.id
+                          ? 'card-bg-color'
+                          : ''
+                      "
+                      (click)="onSelectCard(card)"
+                    >
+                      <div class="address-header">
+                        <h5 class="address-title">Card {{ i + 1 }}</h5>
+                      </div>
+                      <div class="address-details">
+                        <ul class="address-list">
+                          <li class="address-item">
+                            <span class="label">Card Holder:</span>
+                            {{ card?.cardHolder }}
+                          </li>
+                          <li class="address-item">
+                            <span class="label">Card Number:</span>
+                            {{ card?.cardNumber }}
+                          </li>
+                          <li class="address-item">
+                            <span class="label">Cvv:</span> {{ card.cvv }}
+                          </li>
+                          <li class="address-item">
+                            <span class="label">Expence Limit:</span>
+                            {{ card.expenseLimit }}
+                          </li>
+                        </ul>
+                        <button
+                          class="delete-button mb-2"
+                          (click)="deleteCard(card.id)"
+                        >
+                          <mat-icon>delete</mat-icon>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <ng-template #addCardTemp>
+                    <form [formGroup]="cardForm" (ngSubmit)="addCardAddress()">
+                      <div class="form-group">
+                        <label for="cardHolder">Card Holder:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="cardHolder"
+                          formControlName="cardHolder"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="cardNumber">Card Number:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="cardNumber"
+                          formControlName="cardNumber"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="cvv">Cvv:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="cvv"
+                          formControlName="cvv"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="expenseLimit">Expense Limit:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="expenseLimit"
+                          formControlName="expenseLimit"
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <label for="expiryDate">Expiry Date:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="expiryDate"
+                          formControlName="expiryDate"
+                        />
+                      </div>
+
+                      <button type="submit" class="btn btn-primary">
+                        Submit
+                      </button>
+                    </form>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4" *ngIf="selectedPaymentOption === 'eft'">
+              <div class="row mb-5">
+                <div class="col-12">
+                  <h5 class="mt-2">IBAN Accounts</h5>
+                </div>
+                <div class="col-12">
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      Account 1: TR12 1234 1234 1234 1234 1234 123
+                    </li>
+                    <li class="list-group-item">
+                      Account 2: TR43 4321 4321 4321 4321 4321 432
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="mt-4"
+              *ngIf="selectedPaymentOption === 'openAccount'"
+            ></div>
+
+            <div class="col-12 mb-4 text-right">
+              <button class="btn btn-danger mb-1 mr-2" (click)="cancel()">
+                Cancel
+              </button>
+              <button class="btn btn-primary mb-1" (click)="completeOrder()">
+                Complete Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #noProduct>
+    <div class="text-center mt-5 mb-5">
+      <h1 class="display-5">There are no products in your cart.</h1>
+      <p class="lead">
+        You can explore our products and add items to your cart.
+      </p>
+    </div>
+  </ng-template>
+</div>
+
+<div class="shopping-cart" *ngIf="successScreen">
+  <div class="text-center mt-5">
+    <h1 class="display-4">Order Completed Successfully!</h1>
+    <p class="lead">Thank you for shopping with us.</p>
+    <button class="btn btn-primary mb-5" (click)="goToHomePage()">
+      Go to Home
+    </button>
+  </div>
+</div>

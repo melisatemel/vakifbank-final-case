@@ -1,0 +1,344 @@
+2023-10-31 20:41:01.651 [INF] App server is starting.
+2023-10-31 21:36:24.610 [INF] App server is starting.
+2023-10-31 21:37:24.961 [INF] HeaartBeat
+2023-10-31 21:37:24.963 [INF] HeaartBeat
+2023-10-31 21:37:24.964 [INF] LogRequestLoggingMiddleware.Invoke
+2023-10-31 21:37:25.888 [WRN] The 'bool' property 'IsActive' on entity type 'Product' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2023-10-31 21:37:25.890 [WRN] The 'bool' property 'IsActive' on entity type 'ShoppingCart' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2023-10-31 21:37:25.890 [WRN] The 'bool' property 'IsActive' on entity type 'User' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2023-10-31 21:37:25.894 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-31 21:37:25.894 [WRN] No store type was specified for the decimal property 'TotalPrice' on entity type 'ShoppingCart'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-31 21:37:26.924 [INF] -------------Request-Begin------------
+2023-10-31 21:37:26.924 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+Request Body: {
+  "userId": 11,
+  "password": "hello"
+}
+2023-10-31 21:37:26.924 [INF] 
+
+2023-10-31 21:37:26.925 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+StatusCode: 200 
+Response Body: {"success":true,"message":"Success","response":{"expireDate":"2023-10-31T21:42:26.9082962+03:00","token":"eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjciLCJVc2VySWQiOiIxMSIsIlJvbGUiOiJhZG1pbiIsIkVtYWlsIjoienpAYWEuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJGdWxsTmFtZSI6ImFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYSBzdHJpbmJiYmJiYmJiYmJiYmJiYmJnIiwiZXhwIjoxNjk4Nzc3NzQ2LCJpc3MiOiJPcmRlck1hbmFnZW1lbnRTeXN0ZW0iLCJhdWQiOiJPcmRlck1hbmFnZW1lbnRTeXN0ZW0ifQ.bniFEuIDhW3jcUoEoZQpNiWJWHRWzP01NJGMIx4ccIA","email":"zz@aa.com","userId":11}}
+2023-10-31 21:37:26.925 [INF] -------------Request-End------------
+2023-10-31 21:47:24.351 [INF] HeaartBeat
+2023-10-31 21:47:24.352 [INF] HeaartBeat
+2023-10-31 21:47:24.352 [INF] LogRequestLoggingMiddleware.Invoke
+2023-10-31 21:47:24.357 [INF] -------------Request-Begin------------
+2023-10-31 21:47:24.357 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+Request Body: 
+2023-10-31 21:47:24.357 [INF] 
+
+2023-10-31 21:47:24.357 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+StatusCode: 405 
+Response Body: 
+2023-10-31 21:47:24.357 [INF] -------------Request-End------------
+2023-10-31 21:49:01.164 [INF] App server is starting.
+2023-10-31 21:50:53.159 [INF] HeaartBeat
+2023-10-31 21:50:53.162 [INF] HeaartBeat
+2023-10-31 21:50:53.164 [INF] LogRequestLoggingMiddleware.Invoke
+2023-10-31 21:50:53.804 [WRN] The 'bool' property 'IsActive' on entity type 'Product' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2023-10-31 21:50:53.806 [WRN] The 'bool' property 'IsActive' on entity type 'ShoppingCart' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2023-10-31 21:50:53.807 [WRN] The 'bool' property 'IsActive' on entity type 'User' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2023-10-31 21:50:53.811 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-31 21:50:53.811 [WRN] No store type was specified for the decimal property 'TotalPrice' on entity type 'ShoppingCart'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-31 21:50:54.444 [INF] -------------Request-Begin------------
+2023-10-31 21:50:54.444 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+Request Body: {
+  "userId": 11,
+  "password": "hello"
+}
+2023-10-31 21:50:54.444 [INF] 
+
+2023-10-31 21:50:54.444 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+StatusCode: 200 
+Response Body: {"success":true,"message":"Success","response":{"expireDate":"2023-10-31T21:55:54.4309677+03:00","token":"eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjciLCJVc2VySWQiOiIxMSIsIlJvbGUiOiJhZG1pbiIsIkVtYWlsIjoienpAYWEuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJGdWxsTmFtZSI6ImFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYSBzdHJpbmJiYmJiYmJiYmJiYmJiYmJnIiwiZXhwIjoxNjk4Nzc4NTU0LCJpc3MiOiJPcmRlck1hbmFnZW1lbnRTeXN0ZW0iLCJhdWQiOiJPcmRlck1hbmFnZW1lbnRTeXN0ZW0ifQ.RBXbYR5qpsPGRPYWSlznP1AO-EOdOCDqJu1hUM4NLmo","email":"zz@aa.com","userId":11}}
+2023-10-31 21:50:54.444 [INF] -------------Request-End------------
+2023-10-31 22:02:51.180 [INF] App server is starting.
+2023-10-31 22:03:03.362 [INF] App server is starting.
+2023-10-31 22:03:17.838 [INF] HeaartBeat
+2023-10-31 22:03:17.840 [INF] HeaartBeat
+2023-10-31 22:03:17.840 [INF] LogRequestLoggingMiddleware.Invoke
+2023-10-31 22:03:17.885 [INF] -------------Request-Begin------------
+2023-10-31 22:03:17.885 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /favicon.ico 
+QueryString:  
+Request Body: 
+2023-10-31 22:03:17.885 [INF] 
+
+2023-10-31 22:03:17.885 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /favicon.ico 
+QueryString:  
+StatusCode: 404 
+Response Body: 
+2023-10-31 22:03:17.886 [INF] -------------Request-End------------
+2023-10-31 22:03:19.916 [INF] HeaartBeat
+2023-10-31 22:03:19.916 [INF] HeaartBeat
+2023-10-31 22:03:19.916 [INF] LogRequestLoggingMiddleware.Invoke
+2023-10-31 22:03:20.412 [WRN] The 'bool' property 'IsActive' on entity type 'Product' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2023-10-31 22:03:20.414 [WRN] The 'bool' property 'IsActive' on entity type 'ShoppingCart' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2023-10-31 22:03:20.414 [WRN] The 'bool' property 'IsActive' on entity type 'User' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2023-10-31 22:03:20.419 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-31 22:03:20.419 [WRN] No store type was specified for the decimal property 'TotalPrice' on entity type 'ShoppingCart'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-31 22:03:20.967 [INF] -------------Request-Begin------------
+2023-10-31 22:03:20.967 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+Request Body: {
+  "userId": 11,
+  "password": "hello"
+}
+2023-10-31 22:03:20.967 [INF] 
+
+2023-10-31 22:03:20.968 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+StatusCode: 200 
+Response Body: {"success":true,"message":"Success","response":{"expireDate":"2023-10-31T22:08:20.9560819+03:00","token":"eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjciLCJVc2VySWQiOiIxMSIsIlJvbGUiOiJhZG1pbiIsIkVtYWlsIjoienpAYWEuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJGdWxsTmFtZSI6ImFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYSBzdHJpbmJiYmJiYmJiYmJiYmJiYmJnIiwiZXhwIjoxNjk4Nzc5MzAwLCJpc3MiOiJPcmRlck1hbmFnZW1lbnRTeXN0ZW0iLCJhdWQiOiJPcmRlck1hbmFnZW1lbnRTeXN0ZW0ifQ.lFU0w4jFqJ7xv0K58sXGK2n-uyhXbYXtc0MvpVi97w4","email":"zz@aa.com","userId":11}}
+2023-10-31 22:03:20.968 [INF] -------------Request-End------------
+2023-10-31 22:03:24.986 [INF] HeaartBeat
+2023-10-31 22:03:24.986 [INF] HeaartBeat
+2023-10-31 22:03:24.986 [INF] LogRequestLoggingMiddleware.Invoke
+2023-10-31 22:03:25.053 [INF] -------------Request-Begin------------
+2023-10-31 22:03:25.054 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+Request Body: {
+  "userId": 11,
+  "password": "hello"
+}
+2023-10-31 22:03:25.054 [INF] 
+
+2023-10-31 22:03:25.054 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+StatusCode: 200 
+Response Body: {"success":true,"message":"Success","response":{"expireDate":"2023-10-31T22:08:25.0528935+03:00","token":"eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjciLCJVc2VySWQiOiIxMSIsIlJvbGUiOiJhZG1pbiIsIkVtYWlsIjoienpAYWEuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJGdWxsTmFtZSI6ImFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYSBzdHJpbmJiYmJiYmJiYmJiYmJiYmJnIiwiZXhwIjoxNjk4Nzc5MzA1LCJpc3MiOiJPcmRlck1hbmFnZW1lbnRTeXN0ZW0iLCJhdWQiOiJPcmRlck1hbmFnZW1lbnRTeXN0ZW0ifQ.UUCs7voPCNHxSCGnPqsopDP0MbqGp18zzyY0rJwdK8Q","email":"zz@aa.com","userId":11}}
+2023-10-31 22:03:25.054 [INF] -------------Request-End------------
+2023-10-31 22:04:00.865 [INF] HeaartBeat
+2023-10-31 22:04:00.866 [INF] HeaartBeat
+2023-10-31 22:04:00.866 [INF] LogRequestLoggingMiddleware.Invoke
+2023-10-31 22:04:00.866 [INF] -------------Request-Begin------------
+2023-10-31 22:04:00.867 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+Request Body: 
+2023-10-31 22:04:00.867 [INF] 
+
+2023-10-31 22:04:00.867 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+StatusCode: 405 
+Response Body: 
+2023-10-31 22:04:00.867 [INF] -------------Request-End------------
+2023-10-31 22:06:22.506 [INF] HeaartBeat
+2023-10-31 22:06:22.506 [INF] HeaartBeat
+2023-10-31 22:06:22.506 [INF] LogRequestLoggingMiddleware.Invoke
+2023-10-31 22:06:22.507 [INF] -------------Request-Begin------------
+2023-10-31 22:06:22.507 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+Request Body: 
+2023-10-31 22:06:22.507 [INF] 
+
+2023-10-31 22:06:22.507 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+StatusCode: 405 
+Response Body: 
+2023-10-31 22:06:22.507 [INF] -------------Request-End------------
+2023-10-31 22:06:25.348 [INF] App server is starting.
+2023-10-31 22:07:14.527 [INF] HeaartBeat
+2023-10-31 22:07:14.528 [INF] HeaartBeat
+2023-10-31 22:07:14.529 [INF] LogRequestLoggingMiddleware.Invoke
+2023-10-31 22:07:14.581 [INF] -------------Request-Begin------------
+2023-10-31 22:07:14.581 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+Request Body: 
+2023-10-31 22:07:14.581 [INF] 
+
+2023-10-31 22:07:14.581 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+StatusCode: 405 
+Response Body: 
+2023-10-31 22:07:14.581 [INF] -------------Request-End------------
+2023-10-31 22:10:26.871 [INF] App server is starting.
+2023-10-31 22:16:00.218 [INF] App server is starting.
+2023-10-31 22:18:50.532 [INF] App server is starting.
+2023-10-31 22:20:13.484 [INF] App server is starting.
+2023-10-31 22:21:07.544 [INF] App server is starting.
+2023-10-31 22:25:14.255 [INF] App server is starting.
+2023-10-31 22:30:52.815 [INF] App server is starting.
+2023-10-31 22:31:04.214 [INF] HeaartBeat
+2023-10-31 22:31:04.218 [INF] HeaartBeat
+2023-10-31 22:31:04.220 [INF] LogRequestLoggingMiddleware.Invoke
+2023-10-31 22:31:04.728 [WRN] The 'bool' property 'IsActive' on entity type 'Product' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2023-10-31 22:31:04.732 [WRN] The 'bool' property 'IsActive' on entity type 'ShoppingCart' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2023-10-31 22:31:04.733 [WRN] The 'bool' property 'IsActive' on entity type 'User' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2023-10-31 22:31:04.738 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-31 22:31:04.740 [WRN] No store type was specified for the decimal property 'TotalPrice' on entity type 'ShoppingCart'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-31 22:31:05.338 [INF] -------------Request-Begin------------
+2023-10-31 22:31:05.340 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:7271 
+Path: /api/TokenContoller 
+QueryString:  
+Request Body: {
+  "userId": 11,
+  "password": "hello"
+}
+2023-10-31 22:31:05.341 [INF] 
+
+2023-10-31 22:31:05.342 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:7271 
+Path: /api/TokenContoller 
+QueryString:  
+StatusCode: 200 
+Response Body: {"success":true,"message":"Success","response":{"expireDate":"2023-10-31T22:36:05.3243968+03:00","token":"eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjciLCJVc2VySWQiOiIxMSIsIlJvbGUiOiJhZG1pbiIsIkVtYWlsIjoienpAYWEuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJGdWxsTmFtZSI6ImFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYSBzdHJpbmJiYmJiYmJiYmJiYmJiYmJnIiwiZXhwIjoxNjk4NzgwOTY1LCJpc3MiOiJPcmRlck1hbmFnZW1lbnRTeXN0ZW0iLCJhdWQiOiJPcmRlck1hbmFnZW1lbnRTeXN0ZW0ifQ.w3o2oA2yI_XSMlz5EsKbf7BPIl7afbEyOTv6wt3CqyE","email":"zz@aa.com","userId":11}}
+2023-10-31 22:31:05.343 [INF] -------------Request-End------------
+2023-10-31 22:31:49.952 [INF] App server is starting.
+2023-10-31 22:43:13.376 [INF] App server is starting.
+2023-10-31 22:43:26.427 [INF] App server is starting.
+2023-10-31 22:45:07.761 [INF] App server is starting.
+2023-10-31 22:48:17.501 [INF] App server is starting.
+2023-10-31 22:48:34.824 [INF] HeaartBeat
+2023-10-31 22:48:34.826 [INF] HeaartBeat
+2023-10-31 22:48:34.828 [INF] LogRequestLoggingMiddleware.Invoke
+2023-10-31 22:48:36.171 [WRN] The 'bool' property 'IsActive' on entity type 'Product' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2023-10-31 22:48:36.174 [WRN] The 'bool' property 'IsActive' on entity type 'ShoppingCart' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2023-10-31 22:48:36.174 [WRN] The 'bool' property 'IsActive' on entity type 'User' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2023-10-31 22:48:36.179 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-31 22:48:36.179 [WRN] No store type was specified for the decimal property 'TotalPrice' on entity type 'ShoppingCart'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2023-10-31 22:48:37.341 [INF] -------------Request-Begin------------
+2023-10-31 22:48:37.341 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+Request Body: {
+  "userId": 11,
+  "password": "hello"
+}
+2023-10-31 22:48:37.342 [INF] 
+
+2023-10-31 22:48:37.342 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+StatusCode: 200 
+Response Body: {"success":true,"message":"Success","response":{"expireDate":"2023-10-31T22:53:37.3286115+03:00","token":"eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjciLCJVc2VySWQiOiIxMSIsIlJvbGUiOiJhZG1pbiIsIkVtYWlsIjoienpAYWEuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJGdWxsTmFtZSI6ImFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYSBzdHJpbmJiYmJiYmJiYmJiYmJiYmJnIiwiZXhwIjoxNjk4NzgyMDE3LCJpc3MiOiJPcmRlck1hbmFnZW1lbnRTeXN0ZW0iLCJhdWQiOiJPcmRlck1hbmFnZW1lbnRTeXN0ZW0ifQ.u7yNFIpLOpzjUsFgSizapE_xFu8pNOFZiQI9P6DqV6M","email":"zz@aa.com","userId":11}}
+2023-10-31 22:48:37.342 [INF] -------------Request-End------------
+2023-10-31 22:48:56.321 [INF] HeaartBeat
+2023-10-31 22:48:56.321 [INF] HeaartBeat
+2023-10-31 22:48:56.322 [INF] LogRequestLoggingMiddleware.Invoke
+2023-10-31 22:48:56.359 [INF] -------------Request-Begin------------
+2023-10-31 22:48:56.360 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+Request Body: {"requestBody":{"userId":11,"password":"hello"}}
+2023-10-31 22:48:56.360 [INF] 
+
+2023-10-31 22:48:56.360 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+StatusCode: 400 
+Response Body: {"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-3767faf55dabf73e245abef7ae77b34f-14e45b6cd618f93c-00","errors":{"UserId":["UserId is required."],"Password":["The Password field is required.","'Password' boş olmamalı."]}}
+2023-10-31 22:48:56.360 [INF] -------------Request-End------------
+2023-10-31 23:24:33.814 [INF] HeaartBeat
+2023-10-31 23:24:33.815 [INF] HeaartBeat
+2023-10-31 23:24:33.815 [INF] LogRequestLoggingMiddleware.Invoke
+2023-10-31 23:24:33.933 [INF] -------------Request-Begin------------
+2023-10-31 23:24:33.933 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+Request Body: {
+  "userId": 11,
+  "password": "hello"
+}
+2023-10-31 23:24:33.933 [INF] 
+
+2023-10-31 23:24:33.933 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+StatusCode: 200 
+Response Body: {"success":true,"message":"Success","response":{"expireDate":"2023-10-31T23:29:33.9319118+03:00","token":"eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjciLCJVc2VySWQiOiIxMSIsIlJvbGUiOiJhZG1pbiIsIkVtYWlsIjoienpAYWEuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJGdWxsTmFtZSI6ImFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYSBzdHJpbmJiYmJiYmJiYmJiYmJiYmJnIiwiZXhwIjoxNjk4Nzg0MTczLCJpc3MiOiJPcmRlck1hbmFnZW1lbnRTeXN0ZW0iLCJhdWQiOiJPcmRlck1hbmFnZW1lbnRTeXN0ZW0ifQ.nXo91qAvYJO0Ht22EXXy5hb-dTVmrUnhZxfJuFFTIjs","email":"zz@aa.com","userId":11}}
+2023-10-31 23:24:33.933 [INF] -------------Request-End------------
+2023-10-31 23:25:04.850 [INF] HeaartBeat
+2023-10-31 23:25:04.851 [INF] HeaartBeat
+2023-10-31 23:25:04.851 [INF] LogRequestLoggingMiddleware.Invoke
+2023-10-31 23:25:04.920 [INF] -------------Request-Begin------------
+2023-10-31 23:25:04.921 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+Request Body: {"userId":11,"password":"hello"}
+2023-10-31 23:25:04.921 [INF] 
+
+2023-10-31 23:25:04.921 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:44395 
+Path: /api/TokenContoller 
+QueryString:  
+StatusCode: 200 
+Response Body: {"success":true,"message":"Success","response":{"expireDate":"2023-10-31T23:30:04.9192898+03:00","token":"eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjciLCJVc2VySWQiOiIxMSIsIlJvbGUiOiJhZG1pbiIsIkVtYWlsIjoienpAYWEuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJGdWxsTmFtZSI6ImFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYSBzdHJpbmJiYmJiYmJiYmJiYmJiYmJnIiwiZXhwIjoxNjk4Nzg0MjA0LCJpc3MiOiJPcmRlck1hbmFnZW1lbnRTeXN0ZW0iLCJhdWQiOiJPcmRlck1hbmFnZW1lbnRTeXN0ZW0ifQ.DLE-3haT81y9tBibTUNPHssIfToUpjfWuB9DCsnfFrU","email":"zz@aa.com","userId":11}}
+2023-10-31 23:25:04.921 [INF] -------------Request-End------------

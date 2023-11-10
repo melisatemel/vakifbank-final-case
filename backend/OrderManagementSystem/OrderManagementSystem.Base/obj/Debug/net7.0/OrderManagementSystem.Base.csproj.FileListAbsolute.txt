@@ -1,0 +1,12 @@
+C:\Users\Sinan\Desktop\Order Management System\backend\OrderManagementSystem\OrderManagementSystem.Base\bin\Debug\net7.0\OrderManagementSystem.Base.deps.json
+C:\Users\Sinan\Desktop\Order Management System\backend\OrderManagementSystem\OrderManagementSystem.Base\bin\Debug\net7.0\OrderManagementSystem.Base.dll
+C:\Users\Sinan\Desktop\Order Management System\backend\OrderManagementSystem\OrderManagementSystem.Base\bin\Debug\net7.0\OrderManagementSystem.Base.pdb
+C:\Users\Sinan\Desktop\Order Management System\backend\OrderManagementSystem\OrderManagementSystem.Base\obj\Debug\net7.0\OrderManagementSystem.Base.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sinan\Desktop\Order Management System\backend\OrderManagementSystem\OrderManagementSystem.Base\obj\Debug\net7.0\OrderManagementSystem.Base.AssemblyInfoInputs.cache
+C:\Users\Sinan\Desktop\Order Management System\backend\OrderManagementSystem\OrderManagementSystem.Base\obj\Debug\net7.0\OrderManagementSystem.Base.AssemblyInfo.cs
+C:\Users\Sinan\Desktop\Order Management System\backend\OrderManagementSystem\OrderManagementSystem.Base\obj\Debug\net7.0\OrderManagementSystem.Base.csproj.CoreCompileInputs.cache
+C:\Users\Sinan\Desktop\Order Management System\backend\OrderManagementSystem\OrderManagementSystem.Base\obj\Debug\net7.0\OrderManagementSystem.Base.dll
+C:\Users\Sinan\Desktop\Order Management System\backend\OrderManagementSystem\OrderManagementSystem.Base\obj\Debug\net7.0\refint\OrderManagementSystem.Base.dll
+C:\Users\Sinan\Desktop\Order Management System\backend\OrderManagementSystem\OrderManagementSystem.Base\obj\Debug\net7.0\OrderManagementSystem.Base.pdb
+C:\Users\Sinan\Desktop\Order Management System\backend\OrderManagementSystem\OrderManagementSystem.Base\obj\Debug\net7.0\ref\OrderManagementSystem.Base.dll
+C:\Users\Sinan\Desktop\Order Management System\backend\OrderManagementSystem\OrderManagementSystem.Base\obj\Debug\net7.0\OrderManagementSystem.Base.csproj.AssemblyReference.cache

@@ -1,0 +1,85 @@
+<button class="btn btn bg-primary text-light mb-3" (click)="backToDashboard()">
+  Back
+</button>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h3 class="mb-4">Orders</h3>
+    </div>
+
+    <div class="col-4 text-end">
+      <div class="form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="flexSwitchCheckDefault"
+          [(ngModel)]="showOnlyUncompletedOrders"
+          (ngModelChange)="onCheckboxChange()"
+        />
+        <label class="form-check-label" for="flexSwitchCheckDefault"
+          >Show only uncompleted orders</label
+        >
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="orders.length === 0" class="alert alert-info col-4">
+    No orders available.
+  </div>
+
+  <div *ngFor="let order of orders" class="card mb-4">
+    <div class="card-header">
+      <h4 class="card-title">
+        Order Date: {{ order.createdAt | date : "dd/MM/yyyy HH:mm:ss" }}
+      </h4>
+      <p class="card-text">
+        Total Price:
+        {{ calculateTotalPrice(order) | currency : "TRY" : "symbol" : "1.2-2" }}
+      </p>
+      <p class="card-text">User Email: {{ order.email }}</p>
+    </div>
+    <div class="card-body">
+      <h6 class="card-subtitle mb-1 text-muted">Products</h6>
+      <div *ngFor="let product of order.productQuantities" class="media mb-3">
+        <img
+          src="{{ product.image }}"
+          alt="{{ product.name }}"
+          class="mr-3 mt-3"
+          style="width: 100px; border-radius: 8px"
+        />
+        <div class="media-body">
+          <h5 class="mt-0">{{ product.name }}</h5>
+          <p>{{ product.description }}</p>
+          <p>
+            Quantity: {{ product.quantity }} / Price:
+            {{ product.price | currency : "TRY" : "symbol" : "1.2-2" }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 align-items-end">
+      <div *ngIf="!order.isCanceled">
+        <button
+          *ngIf="order.isActive"
+          class="btn btn bg-primary text-light mb-3 ml-3"
+          (click)="completeOrder(order)"
+        >
+          Complate Order
+        </button>
+      </div>
+      <div *ngIf="order.isCanceled">
+        <p style="color: red" class="ml-3">This order has been canceled</p>
+      </div>
+
+      <button
+        *ngIf="!order.isActive"
+        class="btn btn bg-success text-light mb-3 ml-3"
+        (click)="orderCompletedMessage()"
+      >
+        Order Complated
+      </button>
+    </div>
+    </div>
+  </div>
+</div>

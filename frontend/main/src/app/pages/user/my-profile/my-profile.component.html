@@ -1,0 +1,387 @@
+<div class="profile-container">
+  <h2 class="mb-4">My Profile</h2>
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Kullanıcı Bilgileri -->
+      <div class="col-md-4 mb-4">
+        <div class="card" *ngIf="user">
+          <div class="card-body d-flex align-items-center">
+            <div class="avatar bg-primary text-light mr-3">
+              {{ user.firstName[0] }}{{ user.lastName[0] }}
+            </div>
+            <div>
+              <h4 class="card-title">
+                {{ user.firstName }} {{ user.lastName }}
+              </h4>
+              <p class="card-text">{{ user.email }}</p>
+            </div>
+          </div>
+        </div>
+
+        <mat-card class="mt-1 shadow-none">
+          <mat-card-content>
+            <mat-list role="list">
+              <mat-list-item
+                role="listitem"
+                style="border-radius: 10px"
+                class="custom-list-item"
+                (click)="selectItem(1)"
+                [ngClass]="selectedItem == 1 ? 'bg-primary' : ''"
+              >
+                <span class="list-item-content">My Orders</span>
+                <mat-icon class="float-right">keyboard_arrow_right</mat-icon>
+              </mat-list-item>
+              <mat-list-item
+                role="listitem"
+                style="border-radius: 10px"
+                class="custom-list-item"
+                (click)="selectItem(2)"
+                [ngClass]="selectedItem == 2 ? 'bg-primary' : ''"
+              >
+                <span class="list-item-content">My Addreses</span>
+                <mat-icon class="float-right">keyboard_arrow_right</mat-icon>
+              </mat-list-item>
+              <mat-list-item
+                role="listitem"
+                style="border-radius: 10px"
+                class="custom-list-item"
+                (click)="selectItem(3)"
+                [ngClass]="selectedItem == 3 ? 'bg-primary' : ''"
+              >
+                <span class="list-item-content">My Cards</span>
+                <mat-icon class="float-right">keyboard_arrow_right</mat-icon>
+              </mat-list-item>
+              <mat-list-item
+                role="listitem"
+                style="border-radius: 10px"
+                class="custom-list-item"
+                (click)="selectItem(4)"
+                [ngClass]="selectedItem == 4 ? 'bg-primary' : ''"
+              >
+                <span class="list-item-content">My Messages</span>
+                <mat-icon class="float-right">keyboard_arrow_right</mat-icon>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <!-- Kredi Kartı Bilgileri -->
+      <div class="col-md-8">
+        <ng-container *ngIf="selectedItem === 1">
+          <app-my-orders></app-my-orders>
+        </ng-container>
+
+        <ng-container *ngIf="selectedItem === 2">
+          <div class="address-container">
+            <div class="col">
+              <div class="row">
+                <div class="col-6">
+                  <h3 class="mt-2">My Addresses</h3>
+                </div>
+                <div class="col-6 text-right">
+                  <button
+                    class="btn btn-secondary mb-1"
+                    (click)="addAdress = !addAdress"
+                  >
+                    Add Address
+                  </button>
+                </div>
+              </div>
+              <hr />
+              <div class="row" *ngIf="addAdress == false; else addAdressTemp">
+                <div
+                  *ngIf="user.addresses.length === 0"
+                  class="alert alert-info"
+                >
+                  No address available.
+                </div>
+                <div
+                  *ngFor="let address of user.addresses; let i = index"
+                  class="address-card ml-4 mb-4"
+                >
+                  <div class="address-header">
+                    <h5 class="address-title">Address {{ i + 1 }}</h5>
+                  </div>
+                  <div class="address-details">
+                    <ul class="address-list">
+                      <li class="address-item">
+                        <span class="label">Address Line 1:</span>
+                        {{ address?.addressLine1 }}
+                      </li>
+                      <li class="address-item">
+                        <span class="label">Address Line 2:</span>
+                        {{ address?.addressLine2 }}
+                      </li>
+                      <li class="address-item">
+                        <span class="label">City:</span> {{ address.city }}
+                      </li>
+                      <li class="address-item">
+                        <span class="label">County:</span> {{ address.county }}
+                      </li>
+                      <li class="address-item">
+                        <span class="label">Postal Code:</span>
+                        {{ address.postalCode }}
+                      </li>
+                      <li class="address-item">
+                        <span class="label">Name:</span>
+                        {{ address.customerName }}
+                      </li>
+                    </ul>
+                    <button
+                      class="delete-button mb-2"
+                      (click)="deleteAddress(address.id)"
+                    >
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <ng-template #addAdressTemp>
+                <form [formGroup]="addressForm" (ngSubmit)="addNewAddress()">
+                  <div class="form-group">
+                    <label for="addressLine1">Address Line 1:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="addressLine1"
+                      formControlName="addressLine1"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="addressLine2">Address Line 2:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="addressLine2"
+                      formControlName="addressLine2"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="city">City:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="city"
+                      formControlName="city"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="county">County:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="county"
+                      formControlName="county"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="postalCode">Postal Code:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="postalCode"
+                      formControlName="postalCode"
+                    />
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </ng-template>
+            </div>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="selectedItem === 3">
+          <div class="address-container">
+            <div class="col">
+              <div class="row">
+                <div class="col-6">
+                  <h3 class="mt-2">My Cards</h3>
+                </div>
+                <div class="col-6 text-right">
+                  <button
+                    class="btn btn-secondary mb-1"
+                    (click)="addCard = !addCard"
+                  >
+                    Add Card
+                  </button>
+                </div>
+              </div>
+              <hr />
+              <div class="row" *ngIf="addCard == false; else addCardTemp">
+                <div *ngIf="user.cards.length === 0" class="alert alert-info">
+                  No card available.
+                </div>
+                <div
+                  *ngFor="let card of user.cards; let i = index"
+                  class="address-card ml-4 mb-4"
+                >
+                  <div class="address-header">
+                    <h5 class="address-title">Card {{ i + 1 }}</h5>
+                  </div>
+                  <div class="address-details">
+                    <ul class="address-list">
+                      <li class="address-item">
+                        <span class="label">Card Holder:</span>
+                        {{ card?.cardHolder }}
+                      </li>
+                      <li class="address-item">
+                        <span class="label">Card Number:</span>
+                        {{ card?.cardNumber }}
+                      </li>
+                      <li class="address-item">
+                        <span class="label">Cvv:</span> {{ card.cvv }}
+                      </li>
+                      <li class="address-item">
+                        <span class="label">Expence Limit:</span>
+                        {{ card.expenseLimit }}
+                      </li>
+                    </ul>
+                    <button
+                      class="delete-button mb-2"
+                      (click)="deleteCard(card.id)"
+                    >
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <ng-template #addCardTemp>
+                <form [formGroup]="cardForm" (ngSubmit)="addCardAddress()">
+                  <div class="form-group">
+                    <label for="cardHolder">Card Holder:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="cardHolder"
+                      formControlName="cardHolder"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cardNumber">Card Number:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="cardNumber"
+                      formControlName="cardNumber"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cvv">Cvv:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="cvv"
+                      formControlName="cvv"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="expenseLimit">Expense Limit:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="expenseLimit"
+                      formControlName="expenseLimit"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="expiryDate">Expiry Date:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="expiryDate"
+                      formControlName="expiryDate"
+                    />
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </ng-template>
+            </div>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="selectedItem === 4">
+          <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <h3 class="mt-2">My Messages</h3>
+              </div>
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body-messages height3">
+                    <div
+                      style="overflow: auto; height: 450px"
+                      #scrollMe
+                      [scrollTop]="scrollMe.scrollHeight"
+                    >
+                      <ul class="chat-list">
+                        <ng-container *ngFor="let message of messages">
+                          <li class="in" *ngIf="message.isAdmin == true">
+                            <div class="chat-img">
+                              <img
+                                alt="Avtar"
+                                src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                              />
+                            </div>
+                            <div class="chat-body">
+                              <div class="chat-message">
+                                <h5>Admin</h5>
+                                <p>{{ message.content }}</p>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="out" *ngIf="message.isAdmin == false">
+                            <div class="chat-img">
+                              <img
+                                alt="Avtar"
+                                src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                              />
+                            </div>
+                            <div class="chat-body">
+                              <div class="chat-message">
+                                <h5>You</h5>
+                                <p>{{ message.content }}</p>
+                              </div>
+                            </div>
+                          </li>
+                        </ng-container>
+                      </ul>
+                    </div>
+                    <div class="mt-3 mb-3 position-relative">
+                      <label for="newMessage">New Message:</label>
+                      <div class="input-group">
+                        <input
+                          id="newMessage"
+                          type="text"
+                          class="form-control rounded"
+                          [(ngModel)]="newMessage"
+                          (keyup.enter)="sendMessage()"
+                        />
+
+                        <!-- Sağ tarafta bulunan ikon -->
+                        <div class="input-group-append" (click)="sendMessage()">
+                          <span class="input-group-text bg-white border-0">
+                            <mat-icon class="float-right">send</mat-icon>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
